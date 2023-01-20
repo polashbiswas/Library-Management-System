@@ -25,10 +25,7 @@ public class StudentService {
         student.setName(studentRequestDto.getName());
 
 
-        Card newCard = new Card();
-        newCard.setCardStatus(CardStatus.ACTIVATED);
-
-        newCard.setStudent(student);//for that new foreign key column
+        Card newCard = cardService.createCard(student);
 
         //for that bidirectional relation
         student.setCard(newCard);
